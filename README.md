@@ -1,27 +1,47 @@
-# 文件说明
+# Progressive Domain-Independent Feature Decomposition Network for Zero-Shot Sketch-Based Image Retrieval
+the paper can be obtained from [arXiv](https://arxiv.org/abs/2003.09869) or [pdf](https://www.ijcai.org/Proceedings/2020/0137.pdf).
+## The version used in this project
+python 3.7.5  
+torch 1.3.0+cu100  
+Cuda compilation tools, release 10.1, V10.1.243
 
-## 在My-ZSSBIR文件中存放了代码
- ./model储存模型。其中，tip_model为基于语义交叉模态重建的零样本草图检索方法的模型，ijcai_model为基于视觉特征分解的零样本草图检索方法的模型。  
-./checkpoint保存训练过程中得到的最优模型。  
-./dataset/data.py处理数据的代码。   
-traian_tip.py和train_ijcai.py分别是两个模型的训练代码。  
-test_tip.py和test_ijcai.py分别是两个模型的测试代码。  
-config.py是实验的参数设置。  
+## File directory annotation
 
-## 在ZS-SBIR文件中存放了草图数据
-包括sketchy、TU-Berlin
+###  `./My-ZSSBIR` contsins the code and models
+ `./My-ZSSBIR/model`contains models. `./My-ZSSBIR/model/tip_model.py` is Semantic Cross-modality为基于语义交叉模态重建的零样本草图检索方法的模型，`./My-ZSSBIR/model/ijcai_model.py`为基于视觉特征分解的零样本草图检索方法的模型。  
+`./My-ZSSBIR/checkpoint` saves the best model during training.  
+`./My-ZSSBIR/dataset/data.py` is the code to process the data.  
+`./My-ZSSBIR/traian_tip.py` and `./My-ZSSBIR/train_ijcai.py` are training code of two models.  
+`./My-ZSSBIR/test_tip.py` and `./My-ZSSBIR/test_ijcai.py`are test code of two models.  
+`./My-ZSSBIR/config.py` contains the experiment setting parameters.  
 
-# 训练和测试
-## 将config.py中的“test”参数设置为False，并运行命令：
+### `./ZS-SBIR` contains datasets
+The size of `./ZS-SBIR`is about 9.7G, which contains Sketchy(5.1G) and TU-Berlin(4.7G).  
 
-python ys_ijcai.py --dataset Sketchy    //训练Sketchy数据集并得到最终结果  
-python ys_ijcai.py --dataset TU-Berlin //训练TU-Berlin数据集并得到最终结果  
-python ys_tip.py --dataset Sketchy     
-python ys_tip.py --dataset TU-Berlin  
- 
-## 将config.py中的“test”参数设置为True，并运行命令：
+File directory structure as follow：  
+- Sketchy
+  - extebded_photo
+  - hed
+  - photo
+  - sketch
+- TU-Berlin
+  - hed
+  - images
+  - sketches
 
-python ys_ijcai.py --dataset Sketchy    //在Sketchy数据集上，根据得到的最优模型进行测试的结果  
-python ys_ijcai.py --dataset TU-Berlin //在TU-Berlin数据集上，根据得到的最优模型进行测试的结果  
-python ys_tip.py --dataset Sketchy  
-python ys_tip.py --dataset TU-Berlin  
+
+
+## Training and Test
+### set the parameter `'test'` in `config.py` as `False` and run:
+
+`python ys_ijcai.py --dataset Sketchy`    // train Sketchy and get a final result.  
+`python ys_ijcai.py --dataset TU-Berlin` // train TU-Berlin and get a final result.  
+`python ys_tip.py --dataset Sketchy`  
+`python ys_tip.py --dataset TU-Berlin`   
+
+### set the parameter `'test'` in `config.py` as `True` and run:
+
+`python ys_ijcai.py --dataset Sketchy`   // test the best model trained on Sketchy to get result.  
+`python ys_ijcai.py --dataset TU-Berlin`// test the best model trained on TU-Berlin to get result.  
+`python ys_tip.py --dataset Sketchy`   
+`python ys_tip.py --dataset TU-Berlin`  
