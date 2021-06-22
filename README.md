@@ -1,5 +1,13 @@
-# Progressive Domain-Independent Feature Decomposition Network for Zero-Shot Sketch-Based Image Retrieval
-the paper can be obtained from [arXiv](https://arxiv.org/abs/2003.09869) or [pdf](https://www.ijcai.org/Proceedings/2020/0137.pdf).
+# Two projects for Zero-Shot Sketch-Based Image Retrieval
+We put them into one.
+
+## Paper Address
+### Progressive Domain-Independent Feature Decomposition Network for Zero-Shot Sketch-Based Image Retrieval
+the paper received by IJCAI20 can be obtained from [arXiv](https://arxiv.org/abs/2003.09869) or [pdf](https://www.ijcai.org/Proceedings/2020/0137.pdf).
+
+### Progressive Cross-Modal Semantic Network for Zero-Shot Sketch-Based Image Retrieval
+the paper received by TIP20 can be obtained from [pdf](https://ieeexplore.ieee.org/document/9194144).
+
 ## The version used in this project
 python 3.7.5  
 torch 1.3.0+cu100  
@@ -8,7 +16,7 @@ Cuda compilation tools, release 10.1, V10.1.243
 ## File directory annotation
 
 ###  `./My-ZSSBIR` contsins the code and models
- `./My-ZSSBIR/model`contains models. `./My-ZSSBIR/model/tip_model.py` is Semantic Cross-modality为基于语义交叉模态重建的零样本草图检索方法的模型，`./My-ZSSBIR/model/ijcai_model.py`为基于视觉特征分解的零样本草图检索方法的模型。  
+ `./My-ZSSBIR/model`contains models. `./My-ZSSBIR/model/tip_model.py` is Progressive Cross-Modal Semantic Network. `./My-ZSSBIR/model/ijcai_model.py` is Progressive Domain-Independent Feature Decomposition Network. 
 `./My-ZSSBIR/checkpoint` saves the best model during training.  
 `./My-ZSSBIR/dataset/data.py` is the code to process the data.  
 `./My-ZSSBIR/traian_tip.py` and `./My-ZSSBIR/train_ijcai.py` are training code of two models.  
