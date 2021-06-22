@@ -8,10 +8,14 @@ the paper received by IJCAI20 can be obtained from [arXiv](https://arxiv.org/abs
 ### Progressive Cross-Modal Semantic Network for Zero-Shot Sketch-Based Image Retrieval
 the paper received by TIP20 can be obtained from [pdf](https://ieeexplore.ieee.org/document/9194144).
 
+
+
 ## The version used in this project
 python 3.7.5  
 torch 1.3.0+cu100  
 Cuda compilation tools, release 10.1, V10.1.243
+
+
 
 ## File directory annotation
 
