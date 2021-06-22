@@ -20,15 +20,18 @@ Cuda compilation tools, release 10.1, V10.1.243
 ## File directory annotation
 
 ###  `./My-ZSSBIR` contsins the code and models
- `./My-ZSSBIR/model`contains models. `./My-ZSSBIR/model/tip_model.py` is Progressive Cross-Modal Semantic Network. `./My-ZSSBIR/model/ijcai_model.py` is Progressive Domain-Independent Feature Decomposition Network. 
-`./My-ZSSBIR/checkpoint` saves the best model during training.  
-`./My-ZSSBIR/dataset/data.py` is the code to process the data.  
-`./My-ZSSBIR/traian_tip.py` and `./My-ZSSBIR/train_ijcai.py` are training code of two models.  
-`./My-ZSSBIR/test_tip.py` and `./My-ZSSBIR/test_ijcai.py`are test code of two models.  
-`./My-ZSSBIR/config.py` contains the experiment setting parameters.  
+ `./model`contains models.   
+ `./model/tip_model.py` is Progressive Cross-Modal Semantic Network.   
+ `./model/ijcai_model.py` is Progressive Domain-Independent Feature Decomposition Network.   
+`./checkpoint` saves the best model during training.  
+`./dataset/data.py` is the code to process the data.  
+`./traian_tip.py` and `./My-ZSSBIR/train_ijcai.py` are training code of two models.  
+`./test_tip.py` and `./My-ZSSBIR/test_ijcai.py`are test code of two models.  
+`./config.py` contains the experiment setting parameters.  
+You have to notice <strong>the path</strong> in `ys_ijcai.py` and ` ys_tip.py` , if you need to change.  
 
 ### `./ZS-SBIR` contains datasets
-The size of `./ZS-SBIR`is about 9.7G, which contains Sketchy(5.1G) and TU-Berlin(4.7G).  
+The size of `./ZS-SBIR` is about 9.7G, which contains Sketchy(5.1G) and TU-Berlin(4.7G).  
 
 File directory structure as follow：  
 - Sketchy
@@ -43,7 +46,7 @@ File directory structure as follow：
 
 
 
-## Training and Test
+## Train and Test
 ### set the parameter `'test'` in `config.py` as `False` and run:
 
 `python ys_ijcai.py --dataset Sketchy`    // train Sketchy and get a final result.  
